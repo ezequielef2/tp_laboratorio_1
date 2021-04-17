@@ -2,19 +2,19 @@
 #include <stdlib.h>
 #include "hmatematicas.h"
 
-int sumar(int a, int b){   //sumarV4 2 int
+float sumar(float a, float b){   //sumarV4 2 float
     return a+b;
 }
 
-int restar(int a, int b){  //restar 2 int
+float restar(float a, float b){  //restar 2 float
     return a-b;
 }
 
-int multiplicar(int a, int b){  //multiplicar 2 int
+float multiplicar(float a, float b){  //multiplicar 2 float
     return a*b;
 }
 
-float dividir(int a, int b){  //dividir 2 float
+float dividir(float a, float b){  //dividir 2 float
     float rta;
     if( b != 0){
         rta = (float) a/b;
@@ -28,4 +28,44 @@ long long int factorial(int n){  //factorial hasta 12
         fact = fact*i;
     }
     return fact;
+}
+
+void mostrar(float numA, float numB, float resultadoSuma, float resultadoResta, float resultadoDividir, float resultadoMultiplicar, long long int resultadoFactorialA, long long int resultadoFactorialB)
+{
+
+        printf("\n4. Los resultados son: ");
+        printf("\n El resultado de A+B es: %.2f", resultadoSuma);
+        printf("\n El resultado de A-B es: %.2f", resultadoResta);
+        if(numB != 0)
+        {
+                printf("\n El resultado de A/B es: %.2f", resultadoDividir);
+        }
+        else
+        {
+            printf("\n El resultado de A/B es: No es posible efectuar la division por cero");
+        }
+        printf("\n El resultado de A*B es: %.2f", resultadoMultiplicar);
+        if(numA < 0)
+        {
+            printf("\n El factorial de A!  es: No es posible efectuar factorial de un numero menor a cero");
+        }
+        else if(numA > 12){
+            printf("\n El factorial de A!  es: No es posible efectuar factorial de un numero mayor a 12");
+        }
+        else{
+            printf("\n El factorial de A!  es: %I64u.00", resultadoFactorialA);
+        }
+        if(numB < 0)
+		{
+			printf("\n El factorial de B!  es: No es posible efectuar factorial de un numero menor a cero");
+			printf("\n");
+		}
+		else if(numB > 12){
+			printf("\n El factorial de B!  es: No es posible efectuar factorial de un numero mayor a 12");
+			printf("\n");
+		}
+		else{
+			printf("\n El factorial de B!  es: %I64u.00", resultadoFactorialB);
+			printf("\n");
+		}
 }
