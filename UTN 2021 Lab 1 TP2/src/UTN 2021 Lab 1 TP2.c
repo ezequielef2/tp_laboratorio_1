@@ -1,8 +1,8 @@
 /*
  ============================================================================
  Name        : UTN.c
- Author      : 
- Version     :
+ Author      : EZEQUIEL ESTEBAN FERNANDEZ    1G
+ Version     : 1.1                           2021 ©
  Copyright   : Your copyright notice
  Description : Hello World in C, Ansi-style
  ============================================================================
@@ -12,38 +12,30 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Empleados.h"
+#include "Employee.h"
 
 #define TAM 1000
 
 int main(void) {
 
-setbuf(stdout,NULL);
+	setbuf(stdout, NULL);
 
-	int criterioDeOrdenamiento;
+	//int criterioDeOrdenamiento;
 	char seguir = 's';
 	int opc;
 	int nextId = 1;
 
-	//CREO ARRAY DE ESTRUCTURA
-	eEmpleado lista[TAM];
+	//ARRAY DE ESTRUCTURA
+	eEmployee lista[TAM];
 
-	//INICIALIAZO ARRAY DE ESTRUCTURA
+	//INICIALIAZA ARRAY DE ESTRUCTURA
 	inicializarEmpleados(lista, TAM);
 
 	//BUCLE DE MENU
 	do {
-		//MENU PRINT
-		//Menu();
-
-
-		//MENU SWITCH
+		//MENU SWITCH PRINT
 		switch(menu()){
 
-//		case 0:
-//			/** PREGUNTAR SI DESEA SALIR */
-//			opc = 0;
-//			break;
 		case 1:
 			//ALTA EMPLEADO
 			if (eEmpleado_Alta(lista, TAM, &nextId) == 1) {
@@ -75,7 +67,7 @@ setbuf(stdout,NULL);
 //			system("pause");
 //			break;
 		case 4:
-			//LISTADO MOSTRAR EMPLEADOS
+			//MOSTRAR LISTADO EMPLEADOS
 			if(mostrarEmpleados(lista, TAM) == 1){
 				system("pause");
 			}else{
@@ -86,7 +78,7 @@ setbuf(stdout,NULL);
 //		case 5:
 //			//ORDENAR
 //			criterioDeOrdenamiento = -1; //PEDIR CRITERIO DE ORDENAMIENTO
-//			eEmpleado_Sort(eEmpleado, TAM_ESTRUCTURA, criterioDeOrdenamiento);
+//			eEmpleado_Sort(eEmpleado, TAM, criterioDeOrdenamiento);
 //			system("pause");
 //			break;
         case 7:
@@ -106,3 +98,4 @@ setbuf(stdout,NULL);
 
 	return 0;
 }
+
